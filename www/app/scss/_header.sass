@@ -1,0 +1,116 @@
+.header
+  &__top
+    background: $main-color
+    +propToRem(font-size, 16)
+    color: #fff
+    padding: $v-step/2 0
+    text-align: center
+    align-items: center
+    .wrapper
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      +breakpoint(phablet)
+        text-align: left
+        justify-content: space-between
+  &__menu
+    background: linear-gradient($main-color-lighter, $main-color)
+
+    .main-nav__opener
+      z-index: 11
+      text-align: center
+      padding: 5px 0
+      span
+        cursor: pointer
+        font-size: 18px
+        font-weight: 600
+      i
+        font-size: 1.5em
+        vertical-align: middle
+        margin-right: 5px
+        transition: transform .3s
+      &.is-active i
+        transform: rotate(180deg)
+
+    ul
+      z-index: 1
+      position: absolute
+      top: 35px
+      left: -100%
+      width: 100%
+      list-style-type: none
+      background: linear-gradient(to bottom, #45bc5c 0%, #309444 100%, #309444 100%, #2989d8 100%, #309444 100%)
+      font-size: 0
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      -webkit-flex-direction: column
+      -moz-flex-direction: column
+      -ms-flex-direction: column
+      -o-flex-direction: column
+      flex-direction: column
+      -ms-align-items: center
+      align-items: center
+      overflow-y: auto
+      transition: left .5s ease
+    &.is-active ul
+      left: 0
+    ul li
+      width: 100%
+      text-align: center
+      transition: background .2s ease
+      &.is-active, &:hover
+        background: $main-color-lighter
+      a
+        display: inline-block
+        width: 100%
+        padding: 10px 0
+        text-decoration: none
+        color: #fff
+        font-weight: 600
+        font-size: 16px
+        border-top: 1px solid #247634
+
+    +breakpoint(desktop)
+      .main-nav__opener
+        display: none
+      ul
+        flex-direction: row
+        position: static
+        min-height: 45px
+        list-style-type: none
+        display: -webkit-flex
+        display: -moz-flex
+        display: -ms-flex
+        display: -o-flex
+        display: flex
+        justify-content: space-around
+        border-left: 1px solid #57e974
+        border-right: 1px solid #247634
+        li
+          width: 100%
+          border-right: 1px solid #57e974
+          border-left: 1px solid #247634
+          a
+            border: none
+
+
+.contacts
+  color: #0f680e
+  .contact__title
+    width: 85px
+    vertical-align: top
+    font-size: 16px
+  .contact__phone
+    text-decoration: none
+    color: inherit
+    font-size: 20px
+
+
+  

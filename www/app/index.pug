@@ -1,0 +1,78 @@
+doctype html
+html(lang="uk")
+  head
+    include includes/head.pug
+  body
+    include includes/header.pug
+
+    .page
+      .wrapper
+        .row
+          .column
+            -
+              var sidebarList = [
+                {
+                  title: 'Title',
+                  sublist: [
+                    {
+                      title: 'SubTitle'
+                    },
+                    {
+                      title: 'SubTitle'
+                    },
+                    {
+                      title: 'SubTitle'
+                    },
+                    {
+                      title: 'SubTitle'
+                    },
+                    {
+                      title: 'SubTitle'
+                    }
+                  ]
+                }, 
+                {
+                  title: 'Title',
+                },
+                {
+                  title: 'Title',
+                }, 
+                {
+                  title: 'Title',
+                },  
+                {
+                  title: 'Title',
+                },  
+                {
+                  title: 'Title',
+                }                  
+              ];
+
+            nav
+              +listMenuWithSublist(sidebarList)
+
+          .column
+            -
+              var posts = [
+                {
+                  date: '2016-08-04',
+                  text: ' Lorem ipsum dolor sit amet.',
+                  img: 'post-img.png'
+                },                 
+                {
+                  date: '2016-06-27',
+                  text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius fugit reiciendis velit. Vero, corrupti, maiores.',
+                  img: 'post-img.png'
+                },                
+                {
+                  date: '2016-04-17',
+                  text: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, voluptas suscipit.',
+                  img: 'post-img.png'
+                } 
+              ]
+
+            each item in posts
+              +makePost(item)
+            -;
+
+    include includes/footer.pug

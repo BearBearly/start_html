@@ -1,0 +1,35 @@
+include mixins.pug
+
+.header
+  .wrapper
+    -
+      var mainMenu = [
+        {
+          title: 'Главная',
+          href: 'index.html'
+        }, 
+        {
+          title: 'Об игре',
+          href: 'about.html'
+        },           
+        {
+          title: 'Список серверов',
+          href: 'servers.html'
+        }, 
+        {
+          title: 'Наша команда',
+          href: 'team.html'
+        },  
+        {
+          title: 'Донат',
+          href: 'donat.html'
+        },         
+      ];
+
+    .main-nav__opener
+      span
+        i.fas.fa-angle-double-right
+        |Меню 
+
+    +makeList(mainMenu)
+      

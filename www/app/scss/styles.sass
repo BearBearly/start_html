@@ -1,0 +1,246 @@
+@import "vars"
+@import "mixins"
+@import "grid"
+@import "icons"
+@import "header"
+
+*
+  margin: 0
+  padding: 0px
+  box-sizing: border-box
+
+body
+  line-height: 1.5
+  font-family: 'Arial', 'Helvetica', sans-serif
+  +propToRem(font-size, 14)
+
+img
+  max-width: 100%
+
+.header-column
+  padding: $gutter/2
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  flex-direction: column
+  &>*
+    &:first-child
+      margin-top: auto
+    &:last-child
+      margin-bottom: auto
+  +breakpoint(desktop)
+    &_logo
+      max-width: 19%     
+    &_info
+      max-width: 30%
+    &_btns
+      max-width: 16%      
+    &_img
+      max-width: 35%
+
+
+.wrapper_header__top
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+
+.icon-menu 
+  font-size: 0  
+  ul 
+    list-style-type: none
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    margin-left: 5px
+    li 
+      margin-left: 5px
+
+.button
+  position: relative
+  background: #fec90c
+  color: #fff
+  text-align: center
+  width: 100%
+  padding: 8px 0
+  border-radius: 5px
+  display: block
+  text-decoration: none
+  margin: 10px auto 10px
+  border-bottom: 1px solid #293224
+  -webkit-transition: box-shadow .2s
+  -o-transition: box-shadow .2s
+  transition: box-shadow .2s
+  &:hover
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.45)
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0px
+    width: 100%
+    height: 100%
+    left: 0
+    right: 0
+    border-radius: 5px
+    border-bottom: 1px solid #6d5d1e
+
+
+.header
+  background: #fff
+  margin-bottom: $v-step
+
+  .header-column_logo
+    .logo
+      text-align: center
+
+  .header-column_info
+    width: auto
+    margin: 0 auto
+
+  .header-column_img
+    .logo
+      text-align: center
+
+  &__menu
+    background: linear-gradient($main-color-lighter, $main-color)
+    position: relative
+
+.left-sidebar
+  nav 
+    >ul
+      list-style-type: none
+      >li
+        border-bottom: 1px solid #e7e7e7
+        >a
+          display: block
+          font-size: 20px
+          padding: 15px 0
+          text-decoration: none
+          color: #010101
+          &:first-child
+            padding-top: 0
+        ul
+          padding-bottom: 10px
+          li
+            list-style-type: none
+            margin-left: 25px
+            a
+              display: block
+              text-decoration: none
+              color: #ff0000
+              position: relative
+              font-size: 16px
+              &:before
+                  content: '-'
+                  position: absolute
+                  top: 0px
+                  left: -10px
+                  color: #ff0000
+
+.article
+  padding-bottom: 35px
+  border-bottom: 1px solid #e7e7e7
+  .article__title
+    font-size: 24px
+    font-weight: 700
+    margin-bottom: 15px
+  .article__image
+    margin-bottom: 15px
+  .article__text
+    font-size: 14px
+
+.column-posts
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  margin-top: 60px
+  margin-bottom: 30px
+
+  .post
+    // for - flex: 1 auto;
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    -webkit-flex-direction: column
+    -moz-flex-direction: column
+    -ms-flex-direction: column
+    -o-flex-direction: column
+    flex-direction: column
+    height: 100%
+    // 
+    text-decoration: none
+    .post__top
+      padding: 15px 5px 10px
+      font-size: 14px
+      background: $main-color-lighter
+      border-bottom: 1px solid #57e974
+      // 
+      -webkit-flex: 1 auto
+      -moz-flex: 1 auto
+      -ms-flex: 1 auto
+      -o-flex: 1 auto
+      flex: 1 auto
+      // 
+      .post__date
+        display: inline-block
+        color: #000
+        font-weight: 700
+        border-bottom: 1px solid transparent
+        transition: border .2s
+      .post__text
+        color: #fff
+    .post__img
+      overflow: hidden
+      border-top: 1px solid #247634
+      img
+        transition: transform .2s
+    &:hover 
+      .post__date
+        border-color: #000
+      .post__img img
+        -webkit-transform: scale(1.05)
+        -ms-transform: scale(1.05)
+        -o-transform: scale(1.05)
+        transform: scale(1.05)
+
+.footer
+  .footer__top
+    padding: 15px 0
+    background: $secondary-color-darken
+    .wrapper
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      align-items: center
+      +breakpoint(tablet)
+        flex-direction: row
+    span
+      font-size: 20px
+      color: #fff
+    .contacts
+      color: #000
+    .contact__title
+      text-align: right
+      padding-right: 4px
+  .footer__middle
+    background: $main-color-lighter
+    .row
+      justify-content: center
+      a
+        font-size: 0
+        margin: 10px 5px
+  .copyright
+    text-align: left
+    padding: 20px 10px
